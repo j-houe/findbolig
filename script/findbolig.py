@@ -6,7 +6,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 import selenium.webdriver.support.expected_conditions as EC
 from dotenv import load_dotenv
 load_dotenv()
-from utils.exit_after import exit_after
 from typing import List
 import time
 import os
@@ -36,11 +35,9 @@ class FindBolig():
         self.attempt_get(self.url_base)
         self.decline_cookies()
 
-    # @exit_after(60)
     def attempt_get(self, url: str):
         self.driver.get(url)
 
-    # @exit_after(60)
     def get_apartments(self, timeout: int = 10) -> List[WebElement]:
         timeout_count = 0
         while True:            
@@ -52,9 +49,9 @@ class FindBolig():
                 return apartments
             time.sleep(1)
     
-    def sign_up(self, apartment: WebElement):
-        url = apartment.get_property("href")
-        self.attempt_get(url)
+    def sign_up(self, apartment_url: str):
+        self.attempt_get(apartment_url)
+        self.login()
         self.attempt_find_clickable(By.XPATH, '//*[text()="Bestil fremvisning"]').click()
 
     def attempt_find_clickable(
