@@ -1,4 +1,4 @@
-from findbolig import FindBolig
+from script.findbolig import FindBolig
 from time import sleep
 
 

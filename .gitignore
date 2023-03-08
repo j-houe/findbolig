@@ -2,3 +2,5 @@
 .env
 inspiration
 testing.ipynb
+.DS_Stroe
+__pycache__/
