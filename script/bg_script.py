@@ -5,9 +5,9 @@ from time import sleep
 filters = """ 
     Commune=Frederiksberg&
     City=København+V,København+Ø&
-    Rooms=2&
+    Rooms=1&
     RentalPeriod=Unlimited&
-    Rent=6000
+    Rent=8000
 """.replace('\n','').replace(' ', '')
 refresh_delay = 30
 max_errors = 60
