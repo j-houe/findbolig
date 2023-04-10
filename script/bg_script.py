@@ -7,16 +7,16 @@ filters = """
     City=København+V,København+Ø&
     Rooms=2&
     RentalPeriod=Unlimited&
-    Rent=16000
+    Rent=6000
 """.replace('\n','').replace(' ', '')
 refresh_delay = 30
 max_errors = 60
-show_browser = False
+headless = True
 
 
 # -------------------------------------------------------------------- #
 findbolig = FindBolig(filters)
-findbolig.init_webdriver(headless=show_browser)
+findbolig.init_webdriver(headless=headless)
 error_count = 0
 while True: 
     try: 

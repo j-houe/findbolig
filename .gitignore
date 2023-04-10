@@ -1,6 +1,6 @@
 .venv
 .env
 inspiration
-testing.ipynb
+*.ipynb
 .DS_Store
 __pycache__/
