@@ -65,7 +65,7 @@ class FindBolig():
 
     def login(self):
         if self.logged_out():
-            self.attempt_find_clickable(By.XPATH, '//*[text()="Log ind"]').click()
+            self.attempt_find_clickable(By.XPATH, '//*[@id="app"]/header/div[2]').click()
             # Input email
             self.attempt_find_clickable(By.ID, "emailInput").send_keys(self.email)
             # "Fortsæt"
@@ -77,7 +77,7 @@ class FindBolig():
 
     def logged_out(self) -> bool:
         try:
-            check = self.attempt_find_clickable(By.XPATH, '//*[text()="Log ind"]', 5)
+            check = self.attempt_find_clickable(By.XPATH, '//*[@id="app"]/header/div[2]', 5)
             return True
         except:
             check = self.attempt_find_clickable(By.XPATH, '//*[text()="Min side"]', 5)
